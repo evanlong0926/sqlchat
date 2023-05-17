@@ -32,7 +32,10 @@
     "port": "Puerto",
     "database-name": "Nombre de Base de Datos",
     "username": "Usuario",
-    "password": "Contraseña"
+    "password": "Contraseña",
+    "empty-select": "selección clara",
+    "select-all": "seleccionar todo",
+    "tidb-serverless-ssl-hint": "Se requiere SSL y ya está configurado"
   },
   "assistant": {
     "self": "Bot",

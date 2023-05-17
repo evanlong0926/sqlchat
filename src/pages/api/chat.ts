@@ -21,9 +21,19 @@ const handler = async (req: NextRequest) => {
   if (API_KEY) {
     const auth = req.headers.get("Authorization");
     if (!auth || auth !== `Bearer ${API_KEY}`) {
-      return new Response("Unauthorized", {
-        status: 401,
-      });
+      return new Response(
+        JSON.stringify({
+          error: {
+            message: "Unauthorized.",
+          },
+        }),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          status: 401,
+        }
+      );
     }
   }
 
@@ -32,11 +42,20 @@ const handler = async (req: NextRequest) => {
   const apiKey = openAIApiConfig?.key || openAIApiKey;
 
   if (!apiKey) {
-    return new Response("Unauthorized", {
-      status: 401,
-      statusText:
-        "OpenAI API Key is missing. You can supply your own key via Settings.",
-    });
+    return new Response(
+      JSON.stringify({
+        error: {
+          message:
+            "OpenAI API Key is missing. You can supply your own key via Settings.",
+        },
+      }),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        status: 401,
+      }
+    );
   }
 
   const apiEndpoint = getApiEndpoint(

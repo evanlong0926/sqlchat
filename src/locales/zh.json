@@ -27,14 +27,17 @@
     "edit": "编辑连接",
     "select-database": "选择数据库",
     "select-table": "选择数据表",
-    "all-tables":"全部表",
+    "all-tables": "全部表",
+    "select-all": "选择全部",
+    "empty-select": "清空选择",
     "database-type": "数据库类型",
     "title": "标题",
     "host": "主机",
     "port": "端口",
     "database-name": "数据库",
     "username": "用户名",
-    "password": "密码"
+    "password": "密码",
+    "tidb-serverless-ssl-hint": "必需SSL且已配置"
   },
   "assistant": {
     "self": "机器人",

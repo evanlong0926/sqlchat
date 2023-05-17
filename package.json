@@ -49,6 +49,7 @@
     "react-is": "^18.2.0",
     "react-loader-spinner": "^5.3.4",
     "react-markdown": "^8.0.6",
+    "react-svg": "^16.1.11",
     "react-textarea-autosize": "^8.4.0",
     "react-use": "^17.4.0",
     "remark-gfm": "^3.0.1",
@@ -56,6 +57,7 @@
     "stripe": "^12.3.0",
     "styled-components": "^5.3.9",
     "swr": "^2.1.5",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "uuid": "^9.0.0",
     "zustand": "^4.3.6"
   },
