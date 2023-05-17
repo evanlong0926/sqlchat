@@ -10,7 +10,7 @@
 
 ## What
 
-SQL Chat is a chat-based SQL client to ask database questions and query databases using natural language.
+SQL Chat is a chat-based SQL client, which uses natural language to communicate with the database to implement operations such as query, modification, addition, and deletion of the database.
 
 ![Screenshot](https://raw.githubusercontent.com/sqlchat/sqlchat/main/public/screenshot1.webp)
 
@@ -53,7 +53,7 @@ docker run --name sqlchat --platform linux/amd64 -p 3000:3000 sqlchat/sqlchat
 
 Required environment variables:
 
-- `DATABASE_URL`: Postgres connection string to store data. e.g. postgresql://postgres:YOUR_PASSWORD@localhost:5432/sqlchat?schema=sqlchat.
+- `DATABASE_URL`: Postgres connection string to store data. e.g. `postgresql://postgres:YOUR_PASSWORD@localhost:5432/sqlchat?schema=sqlchat`,[explicate](https://www.prisma.io/docs/concepts/database-connectors/postgresql).
 - `OPENAI_API_KEY`: OpenAI API key. You can get one from [here](https://beta.openai.com/docs/developer-quickstart/api-keys).
 
 Optional environment variables:

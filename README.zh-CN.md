@@ -10,17 +10,17 @@
 
 ## 介绍
 
-SQL Chat 是一个基于聊天的 SQL 客户端，使用自然语言向数据库提问和查询数据库。
+SQL Chat 是一个基于聊天的 SQL 客户端，使用自然语言与数据库以沟通的方式，实现对数据库的查询、修改、新增、删除等操作。
 
 ![Screenshot](https://raw.githubusercontent.com/sqlchat/sqlchat/main/public/screenshot1.webp)
 
 ![Screenshot](https://raw.githubusercontent.com/sqlchat/sqlchat/main/public/screenshot2.webp)
 
-## Why
+## 为什么会出现SQL Chat
 
 随着我们进入 [开发者工具2.0时代](https://www.sequoiacap.com/article/ai-powered-developer-tools/)，使用基于聊天的界面重建现有工具的机会非常大。SQL Client 也不例外。与在许多 UI 控件之间导航不同，基于聊天的界面更加直观。当然，前提是那可行，而我们的目标就是提供这种体验。
 
-## How
+## SQL Chat是怎样的
 
 SQL Chat 是由 [Next.js](https://nextjs.org/) 构建的，它支持以下数据库，并将随着时间的推移支持更多:
 
@@ -49,8 +49,13 @@ docker run --name sqlchat --platform linux/amd64 -p 3000:3000 sqlchat/sqlchat
 
 您可以设置以下环境变量来定制部署:
 
-- `OPENAI_API_KEY`: OpenAI API 密钥，从 [here](https://beta.openai.com/docs/developer-quickstart/api-keys) 获取。
+- `DATABASE_URL`: Postgres连接字符串以存储数据。例如：`postgresql://postgres:YOUR_PASSWORD@localhost:5432/sqlchat?schema=sqlchat`，[说明](https://www.prisma.io/docs/concepts/database-connectors/postgresql)。
 - `OPENAI_API_ENDPOINT`: OpenAI API 端点，默认为 `https://api.openai.com`。
+
+环境变量（可选）:
+
+- `OPENAI_API_ENDPOINT`: OpenAI API 端点，默认为 `https://api.openai.com`。
+
 
 ```bash
 docker run --name sqlchat --platform linux/amd64 --env OPENAI_API_KEY=xxx --env OPENAI_API_ENDPOINT=yyy -p 3000:3000 sqlchat/sqlchat
@@ -64,7 +69,7 @@ docker run --name sqlchat --platform linux/amd64 --env OPENAI_API_KEY=xxx --env 
    cp .env.example .env
    ```
 
-2. 将您的 [API密钥](https://platform.openai.com/account/api-keys) 和 `OpenAI API` 端点(可选)添加到新创建的 `.env` 文件;
+2. 将您的 [API密钥](https://platform.openai.com/account/api-keys) 和 `OpenAI API` 端点（可选）添加到新创建的 `.env` 文件;
 
 3. 安装依赖项并启动开发服务器;
 
@@ -127,11 +132,11 @@ docker run --name sqlchat --platform linux/amd64 --env OPENAI_API_KEY=xxx --env 
 <details><summary>如何自托管 SQL Chat?</summary>
 <p>
 
-- 您可以一键将 `SQLChat` 部署到 `Vercel`
+- 您可以一键将 `SQL Chat` 部署到 `Vercel`
 
   <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsqlchat%2Fsqlchat&env=OPENAI_API_KEY"><img src="https://img.shields.io/badge/deploy%20on-Vercel-brightgreen.svg?style=for-the-badge&logo=vercel" alt="vercel"></a>
 
-- 您可以在几秒钟内使用 `Docker` 部署 `SQLChat`
+- 您可以在几秒钟内使用 `Docker` 部署 `SQL Chat`
 
   ```bash
   docker run --name sqlchat --platform linux/amd64 -p 3000:3000 sqlchat/sqlchat
