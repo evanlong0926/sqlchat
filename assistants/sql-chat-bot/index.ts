@@ -1,10 +1,10 @@
-import generalBot from "../general-bot";
+import generalBot from '../general-bot';
 
 export default {
-  id: "sql-chat-bot",
-  name: "SQL Chat bot",
-  description: "The wonderful SQL Chat bot.",
-  avatar: "",
+  id: 'sql-chat-bot',
+  name: 'Chat database bot',
+  description: 'The wonderful Chat database bot.',
+  avatar: '',
   getPrompt: (schema?: string): string => {
     const generalPrompt = generalBot.getPrompt();
     const basicPrompt = `Please follow the instructions to answer the questions:

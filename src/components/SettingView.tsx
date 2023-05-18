@@ -1,60 +1,60 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { HasFeature } from "../utils";
-import Icon from "./Icon";
-import AccountView from "./AccountView";
-import PricingView from "./PricingView";
-import WeChatQRCodeView from "./WeChatQRCodeView";
-import ClearDataButton from "./ClearDataButton";
-import LocaleSelector from "./LocaleSelector";
-import ThemeSelector from "./ThemeSelector";
-import OpenAIApiConfigView from "./OpenAIApiConfigView";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { HasFeature } from '../utils';
+import Icon from './Icon';
+import AccountView from './AccountView';
+import PricingView from './PricingView';
+import WeChatQRCodeView from './WeChatQRCodeView';
+import ClearDataButton from './ClearDataButton';
+import LocaleSelector from './LocaleSelector';
+import ThemeSelector from './ThemeSelector';
+import OpenAIApiConfigView from './OpenAIApiConfigView';
 
 const SettingView = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full flex flex-col justify-start items-start space-y-3 pt-4 dark:bg-zinc-800">
-      <div className="w-full flex flex-row justify-start items-start flex-wrap gap-2">
+    <div className='w-full flex flex-col justify-start items-start space-y-3 pt-4 dark:bg-zinc-800'>
+      {/* <div className='w-full flex flex-row justify-start items-start flex-wrap gap-2'>
         <a
-          href="https://discord.gg/z6kakemDjm"
-          className="w-auto px-4 py-2 rounded-full bg-indigo-600 text-white text-sm font-medium flex flex-row justify-center items-center hover:underline hover:shadow"
-          target="_blank"
+          href='https://discord.gg/z6kakemDjm'
+          className='w-auto px-4 py-2 rounded-full bg-indigo-600 text-white text-sm font-medium flex flex-row justify-center items-center hover:underline hover:shadow'
+          target='_blank'
         >
-          <Icon.BsDiscord className="w-4 h-auto mr-1" />
-          {t("social.join-discord-channel")}
+          <Icon.BsDiscord className='w-4 h-auto mr-1' />
+          {t('social.join-discord-channel')}
         </a>
         <WeChatQRCodeView />
-      </div>
+      </div> */}
 
-      {HasFeature("account") && (
-        <div className="w-full border border-gray-200 dark:border-zinc-700 p-4 rounded-lg space-y-2">
+      {/* {HasFeature('account') && (
+        <div className='w-full border border-gray-200 dark:border-zinc-700 p-4 rounded-lg space-y-2'>
           <AccountView />
         </div>
-      )}
+      )} */}
 
-      {HasFeature("payment") && (
-        <div className="w-full border border-gray-200 dark:border-zinc-700 p-4 rounded-lg space-y-2">
+      {/* {HasFeature('payment') && (
+        <div className='w-full border border-gray-200 dark:border-zinc-700 p-4 rounded-lg space-y-2'>
           <PricingView />
         </div>
-      )}
+      )} */}
 
       <OpenAIApiConfigView />
 
-      <div className="w-full border border-gray-200 dark:border-zinc-700 p-4 rounded-lg space-y-2">
-        <div className="w-full flex flex-row justify-between items-center gap-2">
-          <span>{t("setting.basic.language")}</span>
+      <div className='w-full border border-gray-200 dark:border-zinc-700 p-4 rounded-lg space-y-2'>
+        <div className='w-full flex flex-row justify-between items-center gap-2'>
+          <span>{t('setting.basic.language')}</span>
           <LocaleSelector />
         </div>
-        <div className="w-full flex flex-row justify-between items-center gap-2">
-          <span>{t("setting.theme.self")}</span>
+        <div className='w-full flex flex-row justify-between items-center gap-2'>
+          <span>{t('setting.theme.self')}</span>
           <ThemeSelector />
         </div>
       </div>
 
-      <div className="w-full border border-red-200 dark:border-zinc-700 p-4 rounded-lg">
-        <div className="w-full flex flex-row justify-between items-center gap-2">
-          <span>{t("setting.data.clear-all-data")}</span>
+      <div className='w-full border border-red-200 dark:border-zinc-700 p-4 rounded-lg'>
+        <div className='w-full flex flex-row justify-between items-center gap-2'>
+          <span>{t('setting.data.clear-all-data')}</span>
           <ClearDataButton />
         </div>
       </div>

@@ -1,9 +1,9 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
-import GithubProvider from "next-auth/providers/github";
-import GoogleProvider from "next-auth/providers/google";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import EmailProvider from "next-auth/providers/email";
-import { PrismaClient } from "@prisma/client";
+import NextAuth, { NextAuthOptions } from 'next-auth';
+import GithubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import EmailProvider from 'next-auth/providers/email';
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
   providers: [
     EmailProvider({
       server: process.env.EMAIL_SERVER,
-      from: "noreply@sqlchat.ai",
+      from: 'noreply@sqlchat.ai',
       // maxAge: 24 * 60 * 60, // How long email links are valid for (default 24h)
     }),
     GoogleProvider({
@@ -28,8 +28,8 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   theme: {
-    brandColor: "#4F46E5",
-    logo: "/chat-logo.webp",
+    brandColor: '#4F46E5',
+    // logo: "/chat-logo.webp",
   },
 };
 
