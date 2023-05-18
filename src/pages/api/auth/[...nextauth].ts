@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
   providers: [
     EmailProvider({
       server: process.env.EMAIL_SERVER,
-      from: 'noreply@sqlchat.ai',
+      from: 'noreply@evanlong.me',
       // maxAge: 24 * 60 * 60, // How long email links are valid for (default 24h)
     }),
     GoogleProvider({

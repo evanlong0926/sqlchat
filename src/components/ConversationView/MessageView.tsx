@@ -90,20 +90,16 @@ const MessageView = (props: Props) => {
         </>
       ) : (
         <>
-          {/* <div className="flex justify-center items-center mr-2 shrink-0">
+          <div className='flex justify-center items-center mr-2 shrink-0'>
             {connection ? (
               <EngineIcon
-                className="w-10 h-auto p-1 border dark:border-zinc-700 rounded-full"
+                className='w-10 h-auto p-1 border dark:border-zinc-700 rounded-full'
                 engine={connection.engineType}
               />
             ) : (
-              <img
-                className="w-10 h-auto p-1"
-                src="/chat-logo-bot.webp"
-                alt=""
-              />
+              <img className='w-10 h-auto p-1' src='/openai-logo.png' alt='' />
             )}
-          </div> */}
+          </div>
           {message.status === 'LOADING' && message.content === '' ? (
             <div className='mt-0.5 w-12 bg-gray-100 dark:bg-zinc-700 px-4 py-2 rounded-lg'>
               <ThreeDotsLoader />

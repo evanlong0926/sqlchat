@@ -43,13 +43,13 @@ const IndexPage: NextPage = () => {
         {/* <meta
           name='og:image'
           property='og:image'
-          content='https://www.sqlchat.ai/chat-logo-and-text.webp'
+          content='https://database.evanlong.me/chat-logo-and-text.webp'
         /> */}
         <meta name='og:type' property='og:type' content='website' />
         <meta
           name='og:url'
           property='og:url'
-          content='https://www.sqlchat.ai'
+          content='https://database.evanlong.me'
         />
       </Head>
 
@@ -63,7 +63,7 @@ const IndexPage: NextPage = () => {
 
       <Script
         defer
-        data-domain='sqlchat.ai'
+        data-domain='evanlong.me'
         src='https://plausible.io/js/script.js'
       />
     </div>
