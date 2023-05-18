@@ -1,9 +1,9 @@
-import axios from "axios";
-import { uniqBy } from "lodash-es";
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { Connection, Database, Engine, ResponseObject, Table } from "@/types";
-import { generateUUID } from "@/utils";
+import axios from 'axios';
+import { uniqBy } from 'lodash-es';
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { Connection, Database, Engine, ResponseObject, Table } from '@/types';
+import { generateUUID } from '@/utils';
 
 interface ConnectionContext {
   connection: Connection;
@@ -11,14 +11,14 @@ interface ConnectionContext {
 }
 
 const samplePGConnection: Connection = {
-  id: "sample-pg",
-  title: "Sample PostgreSQL",
-  engineType: Engine.PostgreSQL,
-  host: "db.swxkyqvcefxcjecynews.supabase.co",
-  port: "5432",
-  username: "readonly_user",
-  password: "sqlchat",
-  database: "sample-employee",
+  id: 'sample-mysql',
+  title: 'Sample MySql',
+  engineType: Engine.MySQL,
+  host: '182.92.220.149',
+  port: '3306',
+  username: 'test_1',
+  password: 'y6S7LtYj3NMszTYR',
+  database: 'test_1',
 };
 
 interface ConnectionState {
@@ -84,7 +84,7 @@ export const useConnectionStore = create<ConnectionState>()(
           }
         }
 
-        const { data } = await axios.post<string[]>("/api/connection/db", {
+        const { data } = await axios.post<string[]>('/api/connection/db', {
           connection,
         });
         const fetchedDatabaseList = data.map(
@@ -136,7 +136,7 @@ export const useConnectionStore = create<ConnectionState>()(
         }
 
         const { data: result } = await axios.post<ResponseObject<Table[]>>(
-          "/api/connection/db_schema",
+          '/api/connection/db_schema',
           {
             connection,
             db: database.name,
@@ -183,7 +183,7 @@ export const useConnectionStore = create<ConnectionState>()(
       },
     }),
     {
-      name: "connection-storage",
+      name: 'connection-storage',
     }
   )
 );
